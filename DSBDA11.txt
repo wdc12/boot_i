@@ -1,0 +1,24 @@
+Experiment No.11
+
+Write a code in JAVA for a simple Word Count application that counts the number of occurrences
+of each word in a given input set using the Hadoop Map-Reduce framework on local-standalone
+set-up.
+Step 1) mkdir words
+Step 2) Download hadoop-core-1.2.1.jar, which is used to compile and execute the MapReduce
+program. Visit the following
+link
+http://mvnrepository.com/artifact/org.apache.hadoop/hadoop-core/1.2.1
+Step 3) Put that downloaded jar file into words folder.
+Step 4) Implement WordCount.java program.
+Step 5) Create input1.txt on home directory with some random text
+Step 6) go on words path then compile
+javac -classpath /home/vijay/words/hadoop-core-1.2.1.jar /home/vijay/words/WordCount.java
+Step 7) jar -cvf words.jar -c words/ .
+Step 8) cd .. then use following commands
+hadoop fs -mkdir /input
+hadoop fs -put input1.txt /input
+hadoop fs -ls /input
+hadoop jar /home/vijay/words/words12.jar WordCount /input/input1.txt /out321
+hadoop fs -ls /out321
+hadoop fs -cat /out321/part-r-00000
+(Otherwise check in Browsing HDFS -> Utilities -> Browse the file System -> /)
